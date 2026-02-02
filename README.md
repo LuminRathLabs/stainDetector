@@ -1,6 +1,3 @@
-# stainDetector
-Industrial computer vision application for real time steel surface inspection using YOLO segmentation, RTSP video streams, and PLC integration. Designed for production environments with GPU acceleration and low latency processing.
-
 # StainDetector - Industrial Stain Detection System
 
 **StainDetector** is an advanced computer vision application designed for real-time detection of surface defects (stains) in industrial environments. It leverages YOLO-based deep learning models to identify anomalies on video streams (RTSP) and integrates with PLCs (Programmable Logic Controllers) for automated quality control.
