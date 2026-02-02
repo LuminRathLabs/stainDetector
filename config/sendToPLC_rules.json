@@ -1,0 +1,1487 @@
+[
+  {
+    "rule_id": "a454415451b14f11895506ebd40f7f78",
+    "name": "Banda_En_Parada",
+    "enabled": true,
+    "priority": 1,
+    "condition": {
+      "kind": "plc_bit",
+      "preset_id": "None",
+      "area": "M",
+      "rack": 0,
+      "slot": 2,
+      "db_number": null,
+      "plc_mode": "bit",
+      "byte_index": 500,
+      "bit_index": 0,
+      "expected_value": false,
+      "label": "Banda parada (M500.0=0)"
+    },
+    "actions": [
+      {
+        "kind": "show_message",
+        "params": {
+          "text": "Banda_En_Parada",
+          "color": "#ffbc00",
+          "duration_ms": 4000,
+          "opacity": 0.8
+        }
+      },
+      {
+        "kind": "send_plc",
+        "params": {
+          "preset_id": "None",
+          "byte_index": 500,
+          "bit_index": 2,
+          "value": false,
+          "tag": "ALARM_OFF_BANDA_PARADA",
+          "targets": [
+            {
+              "byte_index": 500,
+              "bit_index": 2,
+              "value": false
+            }
+          ]
+        }
+      }
+    ],
+    "condition_tree": {
+      "type": "group",
+      "operator": "and",
+      "children": [
+        {
+          "type": "condition",
+          "condition": {
+            "kind": "plc_bit",
+            "preset_id": "None",
+            "area": "M",
+            "rack": 0,
+            "slot": 2,
+            "db_number": null,
+            "plc_mode": "bit",
+            "byte_index": 500,
+            "bit_index": 0,
+            "expected_value": false,
+            "label": "Banda parada (M500.0=0)"
+          },
+          "negated": false,
+          "node_id": "c30f899c465b4060a8229ef8f328505f"
+        }
+      ],
+      "negated": false,
+      "node_id": "f5c889a18fbd4583ad2fc91f6e77d3a5"
+    }
+  },
+  {
+    "rule_id": "7ffc0892468b465fb4d10c0fd825bfbd",
+    "name": "Banda_En_Movimiento",
+    "enabled": true,
+    "priority": 1,
+    "condition": {
+      "kind": "plc_bit",
+      "preset_id": "None",
+      "area": "M",
+      "rack": 0,
+      "slot": 2,
+      "db_number": null,
+      "plc_mode": "bit",
+      "byte_index": 500,
+      "bit_index": 0,
+      "expected_value": true,
+      "label": "Banda en movimiento (M500.0=1)"
+    },
+    "actions": [
+      {
+        "kind": "show_message",
+        "params": {
+          "text": "Banda_En_Movimiento",
+          "color": "#ffbc00",
+          "duration_ms": 4000,
+          "opacity": 0.8
+        }
+      }
+    ],
+    "condition_tree": {
+      "type": "group",
+      "operator": "and",
+      "children": [
+        {
+          "type": "condition",
+          "condition": {
+            "kind": "plc_bit",
+            "preset_id": "None",
+            "area": "M",
+            "rack": 0,
+            "slot": 2,
+            "db_number": null,
+            "plc_mode": "bit",
+            "byte_index": 500,
+            "bit_index": 0,
+            "expected_value": true,
+            "label": "Banda en movimiento (M500.0=1)"
+          },
+          "negated": false,
+          "node_id": "ae040ee5b7e2492ebd1e790e162c662c"
+        }
+      ],
+      "negated": false,
+      "node_id": "047dbf2404324ccda9acb13ba1d4dacc"
+    }
+  },
+  {
+    "rule_id": "43a506e384b244368035ec3b663e4e1e",
+    "name": "Switch_OFF_Sin_Permiso_Alarma",
+    "enabled": true,
+    "priority": 1,
+    "condition": {
+      "kind": "plc_bit",
+      "preset_id": "None",
+      "area": "M",
+      "rack": 0,
+      "slot": 2,
+      "db_number": null,
+      "plc_mode": "bit",
+      "byte_index": 500,
+      "bit_index": 1,
+      "expected_value": false,
+      "label": "Switch OFF (M500.1=0)"
+    },
+    "actions": [
+      {
+        "kind": "show_message",
+        "params": {
+          "text": "Switch_OFF_Sin_Permiso_Alarma",
+          "color": "#ffbc00",
+          "duration_ms": 4000,
+          "opacity": 0.8
+        }
+      },
+      {
+        "kind": "send_plc",
+        "params": {
+          "preset_id": "None",
+          "byte_index": 500,
+          "bit_index": 2,
+          "value": false,
+          "tag": "ALARM_OFF_SWITCH_OFF",
+          "targets": [
+            {
+              "byte_index": 500,
+              "bit_index": 2,
+              "value": false
+            }
+          ]
+        }
+      }
+    ],
+    "condition_tree": {
+      "type": "group",
+      "operator": "and",
+      "children": [
+        {
+          "type": "condition",
+          "condition": {
+            "kind": "plc_bit",
+            "preset_id": "None",
+            "area": "M",
+            "rack": 0,
+            "slot": 2,
+            "db_number": null,
+            "plc_mode": "bit",
+            "byte_index": 500,
+            "bit_index": 1,
+            "expected_value": false,
+            "label": "Switch OFF (M500.1=0)"
+          },
+          "negated": false,
+          "node_id": "09b1d3a1eb874b67b96306683707f9c4"
+        }
+      ],
+      "negated": false,
+      "node_id": "6440377c5f1842c9b0c88a5d48498ad6"
+    }
+  },
+  {
+    "rule_id": "215cccb17d4840dda958bbb4713b5d27",
+    "name": "Switch_ON_Permiso_Alarma",
+    "enabled": true,
+    "priority": 1,
+    "condition": {
+      "kind": "plc_bit",
+      "preset_id": "None",
+      "area": "M",
+      "rack": 0,
+      "slot": 2,
+      "db_number": null,
+      "plc_mode": "bit",
+      "byte_index": 500,
+      "bit_index": 1,
+      "expected_value": true,
+      "label": "Switch ON (M500.1=1)"
+    },
+    "actions": [
+      {
+        "kind": "show_message",
+        "params": {
+          "text": "Switch_ON_Permiso_Alarma",
+          "color": "#ffbc00",
+          "duration_ms": 4000,
+          "opacity": 0.8
+        }
+      }
+    ],
+    "condition_tree": {
+      "type": "group",
+      "operator": "and",
+      "children": [
+        {
+          "type": "condition",
+          "condition": {
+            "kind": "plc_bit",
+            "preset_id": "None",
+            "area": "M",
+            "rack": 0,
+            "slot": 2,
+            "db_number": null,
+            "plc_mode": "bit",
+            "byte_index": 500,
+            "bit_index": 1,
+            "expected_value": true,
+            "label": "Switch ON (M500.1=1)"
+          },
+          "negated": false,
+          "node_id": "2456cbbaf9fd4b20b8d6bec826428f4a"
+        }
+      ],
+      "negated": false,
+      "node_id": "8a1ce8d32bf1466cbcb55b058ab917ad"
+    }
+  },
+  {
+    "rule_id": "11c5dec9e2f24a57a0f8d8aa958fa1f8",
+    "name": "Alarma_ON_Estado_PLC",
+    "enabled": true,
+    "priority": 1,
+    "condition": {
+      "kind": "plc_bit",
+      "preset_id": "None",
+      "area": "M",
+      "rack": 0,
+      "slot": 2,
+      "db_number": null,
+      "plc_mode": "bit",
+      "byte_index": 500,
+      "bit_index": 2,
+      "expected_value": true,
+      "label": "Alarma ON (M500.2=1)"
+    },
+    "actions": [
+      {
+        "kind": "show_message",
+        "params": {
+          "text": "Alarma_ON_Estado_PLC",
+          "color": "#ffbc00",
+          "duration_ms": 4000,
+          "opacity": 0.8
+        }
+      }
+    ],
+    "condition_tree": {
+      "type": "group",
+      "operator": "and",
+      "children": [
+        {
+          "type": "condition",
+          "condition": {
+            "kind": "plc_bit",
+            "preset_id": "None",
+            "area": "M",
+            "rack": 0,
+            "slot": 2,
+            "db_number": null,
+            "plc_mode": "bit",
+            "byte_index": 500,
+            "bit_index": 2,
+            "expected_value": true,
+            "label": "Alarma ON (M500.2=1)"
+          },
+          "negated": false,
+          "node_id": "b057fe6f39e9416a97a77608891449c1"
+        }
+      ],
+      "negated": false,
+      "node_id": "13131e1e976847d08fef6bb0a02c4c3b"
+    }
+  },
+  {
+    "rule_id": "7d3fc0b5685748ae83385da6eea98022",
+    "name": "Alarma_OFF_Estado_PLC",
+    "enabled": true,
+    "priority": 1,
+    "condition": {
+      "kind": "plc_bit",
+      "preset_id": "None",
+      "area": "M",
+      "rack": 0,
+      "slot": 2,
+      "db_number": null,
+      "plc_mode": "bit",
+      "byte_index": 500,
+      "bit_index": 2,
+      "expected_value": false,
+      "label": "Alarma OFF (M500.2=0)"
+    },
+    "actions": [
+      {
+        "kind": "show_message",
+        "params": {
+          "text": "Alarma_OFF_Estado_PLC",
+          "color": "#ffbc00",
+          "duration_ms": 4000,
+          "opacity": 0.8
+        }
+      }
+    ],
+    "condition_tree": {
+      "type": "group",
+      "operator": "and",
+      "children": [
+        {
+          "type": "condition",
+          "condition": {
+            "kind": "plc_bit",
+            "preset_id": "None",
+            "area": "M",
+            "rack": 0,
+            "slot": 2,
+            "db_number": null,
+            "plc_mode": "bit",
+            "byte_index": 500,
+            "bit_index": 2,
+            "expected_value": false,
+            "label": "Alarma OFF (M500.2=0)"
+          },
+          "negated": false,
+          "node_id": "e288d4d0ae02448a838587d2aa9ff640"
+        }
+      ],
+      "negated": false,
+      "node_id": "1c409f1963ed4bf8b968cfadf7054310"
+    }
+  },
+  {
+    "rule_id": "1934fef2aa934b2794f030469da5652a",
+    "name": "Boton_Operario_Parar_Alarma_Nuestra",
+    "enabled": true,
+    "priority": 1,
+    "condition": {
+      "kind": "plc_bit",
+      "preset_id": "None",
+      "area": "M",
+      "rack": 0,
+      "slot": 2,
+      "db_number": null,
+      "plc_mode": "bit",
+      "byte_index": 500,
+      "bit_index": 3,
+      "expected_value": true,
+      "label": "Botón alarma pulsado (M500.3=1)"
+    },
+    "actions": [
+      {
+        "kind": "show_message",
+        "params": {
+          "text": "Boton_Operario_Parar_Alarma_Nuestra",
+          "color": "#ffbc00",
+          "duration_ms": 4000,
+          "opacity": 0.8
+        }
+      },
+      {
+        "kind": "send_plc",
+        "params": {
+          "preset_id": "None",
+          "byte_index": 500,
+          "bit_index": 2,
+          "value": false,
+          "tag": "ALARM_OFF_ACK_BUTTON",
+          "targets": [
+            {
+              "byte_index": 500,
+              "bit_index": 2,
+              "value": false
+            }
+          ]
+        }
+      },
+      {
+        "kind": "mute_triggers",
+        "params": {
+          "triggers": [
+            {
+              "rule_id": "6945602ad6cd470d98e477ab16dd3551",
+              "label": "Alarma_Mancha_Repetitiva_Por_Sector"
+            },
+            {
+              "rule_id": "53ae9418e22a4426837b51edb1a7dbe4",
+              "label": "Alarma_Mancha_Agua_Repetitiva_Por_Sector"
+            },
+            {
+              "rule_id": "d6638e47aa5c406ea37598a834dfd4a6",
+              "label": "Alarma_Subdecapado_Fuerte"
+            }
+          ],
+          "duration_sec": 5
+        }
+      }
+    ],
+    "condition_tree": {
+      "type": "group",
+      "operator": "and",
+      "children": [
+        {
+          "type": "condition",
+          "condition": {
+            "kind": "plc_bit",
+            "preset_id": "None",
+            "area": "M",
+            "rack": 0,
+            "slot": 2,
+            "db_number": null,
+            "plc_mode": "bit",
+            "byte_index": 500,
+            "bit_index": 3,
+            "expected_value": true,
+            "label": "Botón alarma pulsado (M500.3=1)"
+          },
+          "negated": false,
+          "node_id": "384c5523df0e413fa76b1fad690f1462"
+        },
+        {
+          "type": "condition",
+          "condition": {
+            "kind": "plc_bit",
+            "preset_id": "None",
+            "area": "M",
+            "rack": 0,
+            "slot": 2,
+            "db_number": null,
+            "plc_mode": "bit",
+            "byte_index": 500,
+            "bit_index": 2,
+            "expected_value": true,
+            "label": "Alarma activa (M500.2=1)"
+          },
+          "negated": false,
+          "node_id": "c0a6561e1e7a4c958c06e362bac8fefc"
+        }
+      ],
+      "negated": false,
+      "node_id": "fcfad5b4f99547bc835fc5128dcd09d3"
+    }
+  },
+  {
+    "rule_id": "25ff59f6a976456ab29c3c8e1cb84548",
+    "name": "Boton_Operario_Parar_Alarma_Ajena",
+    "enabled": true,
+    "priority": 1,
+    "condition": {
+      "kind": "plc_bit",
+      "preset_id": "None",
+      "area": "M",
+      "rack": 0,
+      "slot": 2,
+      "db_number": null,
+      "plc_mode": "bit",
+      "byte_index": 500,
+      "bit_index": 3,
+      "expected_value": true,
+      "label": "Botón alarma pulsado (M500.3=1)"
+    },
+    "actions": [
+      {
+        "kind": "show_message",
+        "params": {
+          "text": "Boton_Operario_Parar_Alarma_Ajena",
+          "color": "#ffbc00",
+          "duration_ms": 4000,
+          "opacity": 0.8
+        }
+      }
+    ],
+    "condition_tree": {
+      "type": "group",
+      "operator": "and",
+      "children": [
+        {
+          "type": "condition",
+          "condition": {
+            "kind": "plc_bit",
+            "preset_id": "None",
+            "area": "M",
+            "rack": 0,
+            "slot": 2,
+            "db_number": null,
+            "plc_mode": "bit",
+            "byte_index": 500,
+            "bit_index": 3,
+            "expected_value": true,
+            "label": "Botón alarma pulsado (M500.3=1)"
+          },
+          "negated": false,
+          "node_id": "9c98bdb43c6f4f27b86c371c50e3e8a7"
+        },
+        {
+          "type": "condition",
+          "condition": {
+            "kind": "plc_bit",
+            "preset_id": "None",
+            "area": "M",
+            "rack": 0,
+            "slot": 2,
+            "db_number": null,
+            "plc_mode": "bit",
+            "byte_index": 500,
+            "bit_index": 2,
+            "expected_value": false,
+            "label": "Alarma OFF (M500.2=0)"
+          },
+          "negated": false,
+          "node_id": "be9ecdb3c5814fecbaf1f6f13f72c14b"
+        }
+      ],
+      "negated": false,
+      "node_id": "44c9bb53f79145beb72e96c829687529"
+    }
+  },
+  {
+    "rule_id": "1afb3abef2fd4cbc9257b2f819b2db82",
+    "name": "Presencia_Soldadura_Bloquea_Alarmas_Mancha_20s",
+    "enabled": true,
+    "priority": 1,
+    "condition": {
+      "kind": "vision",
+      "class_name": "Soldadura",
+      "detection_only": true,
+      "window_sec": 3,
+      "min_count": 1,
+      "max_count": null,
+      "min_area": null,
+      "max_area": null,
+      "area_unit": "px",
+      "min_conf": null,
+      "sector_mode": "aggregate"
+    },
+    "actions": [
+      {
+        "kind": "show_message",
+        "params": {
+          "text": "Presencia_Soldadura_Bloquea_Alarmas_Mancha_20s",
+          "color": "#ffbc00",
+          "duration_ms": 4000,
+          "opacity": 0.8
+        }
+      },
+      {
+        "kind": "send_plc",
+        "params": {
+          "preset_id": "None",
+          "byte_index": 500,
+          "bit_index": 2,
+          "value": false,
+          "tag": "ALARM_OFF_DURING_SOLDADURA",
+          "targets": [
+            {
+              "byte_index": 500,
+              "bit_index": 2,
+              "value": false
+            }
+          ]
+        }
+      },
+      {
+        "kind": "mute_triggers",
+        "params": {
+          "triggers": [
+            {
+              "rule_id": "6945602ad6cd470d98e477ab16dd3551",
+              "label": "Alarma_Mancha_Repetitiva_Por_Sector"
+            },
+            {
+              "rule_id": "53ae9418e22a4426837b51edb1a7dbe4",
+              "label": "Alarma_Mancha_Agua_Repetitiva_Por_Sector"
+            }
+          ],
+          "duration_sec": 20
+        }
+      }
+    ],
+    "condition_tree": {
+      "type": "group",
+      "operator": "and",
+      "children": [
+        {
+          "type": "condition",
+          "condition": {
+            "kind": "vision",
+            "class_name": "Soldadura",
+            "detection_only": true,
+            "window_sec": 3,
+            "min_count": 1,
+            "max_count": null,
+            "min_area": null,
+            "max_area": null,
+            "area_unit": "px",
+            "min_conf": null,
+            "sector_mode": "aggregate"
+          },
+          "negated": false,
+          "node_id": "4afeada2d687460cb88f6b12d9a945d6"
+        }
+      ],
+      "negated": false,
+      "node_id": "45fdd2e5e3324a9b9a56729835849b5f"
+    }
+  },
+  {
+    "rule_id": "345cdae3b24648a8b3019c10d92d9a96",
+    "name": "No_Presencia_Soldadura",
+    "enabled": false,
+    "priority": 1,
+    "condition": {
+      "kind": "vision",
+      "class_name": "Soldadura",
+      "detection_only": true,
+      "window_sec": 3,
+      "min_count": 0,
+      "max_count": 0,
+      "min_area": null,
+      "max_area": null,
+      "area_unit": "px",
+      "min_conf": null,
+      "sector_mode": "aggregate"
+    },
+    "actions": [
+      {
+        "kind": "show_message",
+        "params": {
+          "text": "No_Presencia_Soldadura",
+          "color": "#ffbc00",
+          "duration_ms": 4000,
+          "opacity": 0.8
+        }
+      }
+    ],
+    "condition_tree": {
+      "type": "group",
+      "operator": "and",
+      "children": [
+        {
+          "type": "condition",
+          "condition": {
+            "kind": "vision",
+            "class_name": "Soldadura",
+            "detection_only": true,
+            "window_sec": 3,
+            "min_count": 0,
+            "max_count": 0,
+            "min_area": null,
+            "max_area": null,
+            "area_unit": "px",
+            "min_conf": null,
+            "sector_mode": "aggregate"
+          },
+          "negated": false,
+          "node_id": "cbd270ddeddf4d36b43c7121a4112f7d"
+        }
+      ],
+      "negated": false,
+      "node_id": "f198d8628ec14d3c9e4b975ede0fa27a"
+    }
+  },
+  {
+    "rule_id": "40d330b1932a49e1bbf7c43cdb074b74",
+    "name": "Presencia_Mancha",
+    "enabled": true,
+    "priority": 1,
+    "condition": {
+      "kind": "vision",
+      "class_name": "Mancha",
+      "detection_only": true,
+      "window_sec": 3,
+      "min_count": 1,
+      "max_count": null,
+      "min_area": null,
+      "max_area": null,
+      "area_unit": "px",
+      "min_conf": null,
+      "sector_mode": "aggregate"
+    },
+    "actions": [
+      {
+        "kind": "show_message",
+        "params": {
+          "text": "Presencia_Mancha",
+          "color": "#ffbc00",
+          "duration_ms": 4000,
+          "opacity": 0.8
+        }
+      }
+    ],
+    "condition_tree": {
+      "type": "group",
+      "operator": "and",
+      "children": [
+        {
+          "type": "condition",
+          "condition": {
+            "kind": "vision",
+            "class_name": "Mancha",
+            "detection_only": true,
+            "window_sec": 3,
+            "min_count": 1,
+            "max_count": null,
+            "min_area": null,
+            "max_area": null,
+            "area_unit": "px",
+            "min_conf": null,
+            "sector_mode": "aggregate"
+          },
+          "negated": false,
+          "node_id": "0544fae4c96e40a38ce47f5928e434ad"
+        }
+      ],
+      "negated": false,
+      "node_id": "f671c75109314ca98f0b201ad090119e"
+    }
+  },
+  {
+    "rule_id": "69d72e1f326945478140178c1d5890df",
+    "name": "No_Presencia_Mancha",
+    "enabled": false,
+    "priority": 1,
+    "condition": {
+      "kind": "vision",
+      "class_name": "Mancha",
+      "detection_only": true,
+      "window_sec": 3,
+      "min_count": 0,
+      "max_count": 0,
+      "min_area": null,
+      "max_area": null,
+      "area_unit": "px",
+      "min_conf": null,
+      "sector_mode": "aggregate"
+    },
+    "actions": [
+      {
+        "kind": "show_message",
+        "params": {
+          "text": "No_Presencia_Mancha",
+          "color": "#ffbc00",
+          "duration_ms": 4000,
+          "opacity": 0.8
+        }
+      }
+    ],
+    "condition_tree": {
+      "type": "group",
+      "operator": "and",
+      "children": [
+        {
+          "type": "condition",
+          "condition": {
+            "kind": "vision",
+            "class_name": "Mancha",
+            "detection_only": true,
+            "window_sec": 3,
+            "min_count": 0,
+            "max_count": 0,
+            "min_area": null,
+            "max_area": null,
+            "area_unit": "px",
+            "min_conf": null,
+            "sector_mode": "aggregate"
+          },
+          "negated": false,
+          "node_id": "f7cb2eddb40e4e54bc109dce6a2e85fe"
+        }
+      ],
+      "negated": false,
+      "node_id": "134001351ddc4e84a6e890430f4d780b"
+    }
+  },
+  {
+    "rule_id": "e563001431264f3d963d80c1d55422ad",
+    "name": "Presencia_Subdecapado",
+    "enabled": true,
+    "priority": 1,
+    "condition": {
+      "kind": "vision",
+      "class_name": "Subdecapado",
+      "detection_only": true,
+      "window_sec": 3,
+      "min_count": 1,
+      "max_count": null,
+      "min_area": null,
+      "max_area": null,
+      "area_unit": "px",
+      "min_conf": null,
+      "sector_mode": "aggregate"
+    },
+    "actions": [
+      {
+        "kind": "show_message",
+        "params": {
+          "text": "Presencia_Subdecapado",
+          "color": "#ffbc00",
+          "duration_ms": 4000,
+          "opacity": 0.8
+        }
+      }
+    ],
+    "condition_tree": {
+      "type": "group",
+      "operator": "and",
+      "children": [
+        {
+          "type": "condition",
+          "condition": {
+            "kind": "vision",
+            "class_name": "Subdecapado",
+            "detection_only": true,
+            "window_sec": 3,
+            "min_count": 1,
+            "max_count": null,
+            "min_area": null,
+            "max_area": null,
+            "area_unit": "px",
+            "min_conf": null,
+            "sector_mode": "aggregate"
+          },
+          "negated": false,
+          "node_id": "bf11b00162ae47f690dbd229002a7058"
+        }
+      ],
+      "negated": false,
+      "node_id": "c40ea4a98c1e45d68863aa444f4a2bcd"
+    }
+  },
+  {
+    "rule_id": "2002cf3926b04bef96aa574402edcb96",
+    "name": "No_Presencia_Subdecapado",
+    "enabled": false,
+    "priority": 1,
+    "condition": {
+      "kind": "vision",
+      "class_name": "Subdecapado",
+      "detection_only": true,
+      "window_sec": 3,
+      "min_count": 0,
+      "max_count": 0,
+      "min_area": null,
+      "max_area": null,
+      "area_unit": "px",
+      "min_conf": null,
+      "sector_mode": "aggregate"
+    },
+    "actions": [
+      {
+        "kind": "show_message",
+        "params": {
+          "text": "No_Presencia_Subdecapado",
+          "color": "#ffbc00",
+          "duration_ms": 4000,
+          "opacity": 0.8
+        }
+      }
+    ],
+    "condition_tree": {
+      "type": "group",
+      "operator": "and",
+      "children": [
+        {
+          "type": "condition",
+          "condition": {
+            "kind": "vision",
+            "class_name": "Subdecapado",
+            "detection_only": true,
+            "window_sec": 3,
+            "min_count": 0,
+            "max_count": 0,
+            "min_area": null,
+            "max_area": null,
+            "area_unit": "px",
+            "min_conf": null,
+            "sector_mode": "aggregate"
+          },
+          "negated": false,
+          "node_id": "2e8d0edcd11c4f5a844f2646ca6c2b94"
+        }
+      ],
+      "negated": false,
+      "node_id": "42942e2f8fbc42beb0e5c37392f35c74"
+    }
+  },
+  {
+    "rule_id": "18de9805503e49f1bcf90186ddb14627",
+    "name": "Presencia_Mancha_Agua",
+    "enabled": true,
+    "priority": 1,
+    "condition": {
+      "kind": "vision",
+      "class_name": "Mancha_Agua",
+      "detection_only": true,
+      "window_sec": 3,
+      "min_count": 1,
+      "max_count": null,
+      "min_area": null,
+      "max_area": null,
+      "area_unit": "px",
+      "min_conf": null,
+      "sector_mode": "aggregate"
+    },
+    "actions": [
+      {
+        "kind": "show_message",
+        "params": {
+          "text": "Presencia_Mancha_Agua",
+          "color": "#ffbc00",
+          "duration_ms": 4000,
+          "opacity": 0.8
+        }
+      }
+    ],
+    "condition_tree": {
+      "type": "group",
+      "operator": "and",
+      "children": [
+        {
+          "type": "condition",
+          "condition": {
+            "kind": "vision",
+            "class_name": "Mancha_Agua",
+            "detection_only": true,
+            "window_sec": 3,
+            "min_count": 1,
+            "max_count": null,
+            "min_area": null,
+            "max_area": null,
+            "area_unit": "px",
+            "min_conf": null,
+            "sector_mode": "aggregate"
+          },
+          "negated": false,
+          "node_id": "5a68e8adf4044cd186e72629dc72f7b0"
+        }
+      ],
+      "negated": false,
+      "node_id": "0af97c34035c4630b5a0d91cb25f9dda"
+    }
+  },
+  {
+    "rule_id": "e2ef24dfd3fe4eed86664e91c10ff040",
+    "name": "No_Presencia_Mancha_Agua",
+    "enabled": false,
+    "priority": 1,
+    "condition": {
+      "kind": "vision",
+      "class_name": "Mancha_Agua",
+      "detection_only": true,
+      "window_sec": 3,
+      "min_count": 0,
+      "max_count": 0,
+      "min_area": null,
+      "max_area": null,
+      "area_unit": "px",
+      "min_conf": null,
+      "sector_mode": "aggregate"
+    },
+    "actions": [
+      {
+        "kind": "show_message",
+        "params": {
+          "text": "No_Presencia_Mancha_Agua",
+          "color": "#ffbc00",
+          "duration_ms": 4000,
+          "opacity": 0.8
+        }
+      }
+    ],
+    "condition_tree": {
+      "type": "group",
+      "operator": "and",
+      "children": [
+        {
+          "type": "condition",
+          "condition": {
+            "kind": "vision",
+            "class_name": "Mancha_Agua",
+            "detection_only": true,
+            "window_sec": 3,
+            "min_count": 0,
+            "max_count": 0,
+            "min_area": null,
+            "max_area": null,
+            "area_unit": "px",
+            "min_conf": null,
+            "sector_mode": "aggregate"
+          },
+          "negated": false,
+          "node_id": "fdf3ba22fcdd4937a03845b1f26ee581"
+        }
+      ],
+      "negated": false,
+      "node_id": "3d2d2b05df244028a250ba1e8d1d83f4"
+    }
+  },
+  {
+    "rule_id": "6945602ad6cd470d98e477ab16dd3551",
+    "name": "Alarma_Mancha_Repetitiva_Por_Sector",
+    "enabled": true,
+    "priority": 1,
+    "condition": {
+      "kind": "plc_bit",
+      "preset_id": "None",
+      "area": "M",
+      "rack": 0,
+      "slot": 2,
+      "db_number": null,
+      "plc_mode": "bit",
+      "byte_index": 500,
+      "bit_index": 0,
+      "expected_value": true,
+      "label": "Banda en movimiento (M500.0=1)"
+    },
+    "actions": [
+      {
+        "kind": "show_message",
+        "params": {
+          "text": "Alarma_Mancha_Repetitiva_Por_Sector",
+          "color": "#ffbc00",
+          "duration_ms": 4000,
+          "opacity": 0.8
+        }
+      },
+      {
+        "kind": "send_plc",
+        "params": {
+          "preset_id": "None",
+          "byte_index": 500,
+          "bit_index": 2,
+          "value": true,
+          "tag": "ALARM_ON_MANCHA_SECTOR",
+          "targets": [
+            {
+              "byte_index": 500,
+              "bit_index": 2,
+              "value": true
+            }
+          ]
+        }
+      }
+    ],
+    "condition_tree": {
+      "type": "group",
+      "operator": "and",
+      "children": [
+        {
+          "type": "condition",
+          "condition": {
+            "kind": "plc_bit",
+            "preset_id": "None",
+            "area": "M",
+            "rack": 0,
+            "slot": 2,
+            "db_number": null,
+            "plc_mode": "bit",
+            "byte_index": 500,
+            "bit_index": 0,
+            "expected_value": true,
+            "label": "Banda en movimiento (M500.0=1)"
+          },
+          "negated": false,
+          "node_id": "5147816e0e1e4ecbac5c09ae9158c719"
+        },
+        {
+          "type": "condition",
+          "condition": {
+            "kind": "plc_bit",
+            "preset_id": "None",
+            "area": "M",
+            "rack": 0,
+            "slot": 2,
+            "db_number": null,
+            "plc_mode": "bit",
+            "byte_index": 500,
+            "bit_index": 1,
+            "expected_value": true,
+            "label": "Switch ON (M500.1=1)"
+          },
+          "negated": false,
+          "node_id": "cc39a9a4f746461eb69b63788098d777"
+        },
+        {
+          "type": "condition",
+          "condition": {
+            "kind": "plc_bit",
+            "preset_id": "None",
+            "area": "M",
+            "rack": 0,
+            "slot": 2,
+            "db_number": null,
+            "plc_mode": "bit",
+            "byte_index": 500,
+            "bit_index": 2,
+            "expected_value": false,
+            "label": "Alarma OFF (M500.2=0)"
+          },
+          "negated": false,
+          "node_id": "ed6aa4cc194841cebae9010882932fe1"
+        },
+        {
+          "type": "condition",
+          "condition": {
+            "kind": "vision",
+            "class_name": "Mancha",
+            "detection_only": false,
+            "window_sec": 8,
+            "min_count": 5,
+            "max_count": null,
+            "min_area": 20.0,
+            "max_area": null,
+            "area_unit": "cm",
+            "min_conf": 0.3,
+            "sector_mode": "any",
+            "sector": [
+              0,
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          "negated": false,
+          "node_id": "5aa3d48a7f284e5cb3d8f58e4a3cc5d7"
+        },
+        {
+          "type": "condition",
+          "condition": {
+            "kind": "vision",
+            "class_name": "Soldadura",
+            "detection_only": true,
+            "window_sec": 3,
+            "min_count": 1,
+            "max_count": null,
+            "min_area": null,
+            "max_area": null,
+            "area_unit": "px",
+            "min_conf": null,
+            "sector_mode": "aggregate"
+          },
+          "negated": true,
+          "node_id": "9daf0a5bc94a4ecc98f4ace9cd26de07"
+        }
+      ],
+      "negated": false,
+      "node_id": "952fba4ca06241d8bad5cbe49762dd80"
+    }
+  },
+  {
+    "rule_id": "53ae9418e22a4426837b51edb1a7dbe4",
+    "name": "Alarma_Mancha_Agua_Repetitiva_Por_Sector",
+    "enabled": false,
+    "priority": 1,
+    "condition": {
+      "kind": "plc_bit",
+      "preset_id": "None",
+      "area": "M",
+      "rack": 0,
+      "slot": 2,
+      "db_number": null,
+      "plc_mode": "bit",
+      "byte_index": 500,
+      "bit_index": 0,
+      "expected_value": true,
+      "label": "Banda en movimiento (M500.0=1)"
+    },
+    "actions": [
+      {
+        "kind": "show_message",
+        "params": {
+          "text": "Alarma_Mancha_Agua_Repetitiva_Por_Sector",
+          "color": "#ffbc00",
+          "duration_ms": 4000,
+          "opacity": 0.8
+        }
+      },
+      {
+        "kind": "send_plc",
+        "params": {
+          "preset_id": "None",
+          "byte_index": 500,
+          "bit_index": 2,
+          "value": true,
+          "tag": "ALARM_ON_MANCHA_AGUA_SECTOR",
+          "targets": [
+            {
+              "byte_index": 500,
+              "bit_index": 2,
+              "value": true
+            }
+          ]
+        }
+      }
+    ],
+    "condition_tree": {
+      "type": "group",
+      "operator": "and",
+      "children": [
+        {
+          "type": "condition",
+          "condition": {
+            "kind": "plc_bit",
+            "preset_id": "None",
+            "area": "M",
+            "rack": 0,
+            "slot": 2,
+            "db_number": null,
+            "plc_mode": "bit",
+            "byte_index": 500,
+            "bit_index": 0,
+            "expected_value": true,
+            "label": "Banda en movimiento (M500.0=1)"
+          },
+          "negated": false,
+          "node_id": "1554149457724461b4b8e8ced8073750"
+        },
+        {
+          "type": "condition",
+          "condition": {
+            "kind": "plc_bit",
+            "preset_id": "None",
+            "area": "M",
+            "rack": 0,
+            "slot": 2,
+            "db_number": null,
+            "plc_mode": "bit",
+            "byte_index": 500,
+            "bit_index": 1,
+            "expected_value": true,
+            "label": "Switch ON (M500.1=1)"
+          },
+          "negated": false,
+          "node_id": "57359f4b4007479eada8f82a5fe5168e"
+        },
+        {
+          "type": "condition",
+          "condition": {
+            "kind": "plc_bit",
+            "preset_id": "None",
+            "area": "M",
+            "rack": 0,
+            "slot": 2,
+            "db_number": null,
+            "plc_mode": "bit",
+            "byte_index": 500,
+            "bit_index": 2,
+            "expected_value": false,
+            "label": "Alarma OFF (M500.2=0)"
+          },
+          "negated": false,
+          "node_id": "67df670518e84a1682fd6668fc7a4958"
+        },
+        {
+          "type": "condition",
+          "condition": {
+            "kind": "vision",
+            "class_name": "Mancha_Agua",
+            "detection_only": false,
+            "window_sec": 8,
+            "min_count": 5,
+            "max_count": null,
+            "min_area": 20.0,
+            "max_area": null,
+            "area_unit": "cm",
+            "min_conf": 0.1,
+            "sector_mode": "any",
+            "sector": [
+              0,
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          "negated": false,
+          "node_id": "205e0be1c6c84e59b499d2ea65a3441f"
+        },
+        {
+          "type": "condition",
+          "condition": {
+            "kind": "vision",
+            "class_name": "Soldadura",
+            "detection_only": true,
+            "window_sec": 3,
+            "min_count": 1,
+            "max_count": null,
+            "min_area": null,
+            "max_area": null,
+            "area_unit": "px",
+            "min_conf": null,
+            "sector_mode": "aggregate"
+          },
+          "negated": true,
+          "node_id": "cc79070d244d48dea9695f73b15e2059"
+        }
+      ],
+      "negated": false,
+      "node_id": "e46c83ae22354c438bd2e40dccc0c898"
+    }
+  },
+  {
+    "rule_id": "d6638e47aa5c406ea37598a834dfd4a6",
+    "name": "Alarma_Subdecapado_Fuerte",
+    "enabled": false,
+    "priority": 1,
+    "condition": {
+      "kind": "plc_bit",
+      "preset_id": "None",
+      "area": "M",
+      "rack": 0,
+      "slot": 2,
+      "db_number": null,
+      "plc_mode": "bit",
+      "byte_index": 500,
+      "bit_index": 0,
+      "expected_value": true,
+      "label": "Banda en movimiento (M500.0=1)"
+    },
+    "actions": [
+      {
+        "kind": "show_message",
+        "params": {
+          "text": "Alarma_Subdecapado_Fuerte",
+          "color": "#ffbc00",
+          "duration_ms": 4000,
+          "opacity": 0.8
+        }
+      },
+      {
+        "kind": "send_plc",
+        "params": {
+          "preset_id": "None",
+          "byte_index": 500,
+          "bit_index": 2,
+          "value": true,
+          "tag": "ALARM_ON_SUBDECAPADO",
+          "targets": [
+            {
+              "byte_index": 500,
+              "bit_index": 2,
+              "value": true
+            }
+          ]
+        }
+      }
+    ],
+    "condition_tree": {
+      "type": "group",
+      "operator": "and",
+      "children": [
+        {
+          "type": "condition",
+          "condition": {
+            "kind": "plc_bit",
+            "preset_id": "None",
+            "area": "M",
+            "rack": 0,
+            "slot": 2,
+            "db_number": null,
+            "plc_mode": "bit",
+            "byte_index": 500,
+            "bit_index": 0,
+            "expected_value": true,
+            "label": "Banda en movimiento (M500.0=1)"
+          },
+          "negated": false,
+          "node_id": "c0f77bbd809a4bacbc825ccab7a10b2c"
+        },
+        {
+          "type": "condition",
+          "condition": {
+            "kind": "plc_bit",
+            "preset_id": "None",
+            "area": "M",
+            "rack": 0,
+            "slot": 2,
+            "db_number": null,
+            "plc_mode": "bit",
+            "byte_index": 500,
+            "bit_index": 1,
+            "expected_value": true,
+            "label": "Switch ON (M500.1=1)"
+          },
+          "negated": false,
+          "node_id": "8f7e384f71a942418f195ddfbad547f8"
+        },
+        {
+          "type": "condition",
+          "condition": {
+            "kind": "plc_bit",
+            "preset_id": "None",
+            "area": "M",
+            "rack": 0,
+            "slot": 2,
+            "db_number": null,
+            "plc_mode": "bit",
+            "byte_index": 500,
+            "bit_index": 2,
+            "expected_value": false,
+            "label": "Alarma OFF (M500.2=0)"
+          },
+          "negated": false,
+          "node_id": "0930d756136f4d16afab2033b4570ce7"
+        },
+        {
+          "type": "condition",
+          "condition": {
+            "kind": "vision",
+            "class_name": "Subdecapado",
+            "detection_only": false,
+            "window_sec": 5,
+            "min_count": 8,
+            "max_count": null,
+            "min_area": 50.0,
+            "max_area": 200000000.0,
+            "area_unit": "cm",
+            "min_conf": 0.4,
+            "sector_mode": "aggregate"
+          },
+          "negated": false,
+          "node_id": "2827dddeb0604ce0a0fe1662933cef6e"
+        },
+        {
+          "type": "condition",
+          "condition": {
+            "kind": "vision",
+            "class_name": "Soldadura",
+            "detection_only": true,
+            "window_sec": 3,
+            "min_count": 1,
+            "max_count": null,
+            "min_area": null,
+            "max_area": null,
+            "area_unit": "px",
+            "min_conf": null,
+            "sector_mode": "aggregate"
+          },
+          "negated": true,
+          "node_id": "2eb132811b7f41b0ac92da01bb124b54"
+        }
+      ],
+      "negated": false,
+      "node_id": "4f4cd13204c5486185a23242eacb8020"
+    }
+  }
+]

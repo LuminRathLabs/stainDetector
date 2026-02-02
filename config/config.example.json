@@ -1,0 +1,939 @@
+{
+  "model_path": "",
+  "model_path2": "",
+  "video_path": "",
+  "out_path": "",
+  "save_out": false,
+  "source_mode": "RTSP",
+  "rtsp_user": "admin",
+  "rtsp_password": "",
+  "rtsp_host": "0.0.0.0",
+  "rtsp_port": "554",
+  "rtsp_path": "",
+  "rtsp_manual_enabled": false,
+  "rtsp_manual_url": "rtsp://0.0.0.0:554/cam/realmonitor",
+  "conf": 0.06907378335949764,
+  "iou": 0.08925869894099848,
+  "show_boxes": false,
+  "show_names": true,
+  "show_masks": true,
+  "area_label_mode": "both",
+  "masks_as_contours": false,
+  "use_retina_masks": true,
+  "highlight_tiny": false,
+  "perf_mode": "Auto",
+  "auto_skip": true,
+  "target_fps": 23,
+  "det_stride": 3,
+  "stride2_var": 1,
+  "imgsz1": 700,
+  "imgsz2": 1280,
+  "max_det": 40,
+  "topk_draw": 40,
+  "filter_in_model": true,
+  "agnostic_nms": true,
+  "use_half": true,
+  "enable_m1": true,
+  "enable_m2": true,
+  "line_thickness": 4,
+  "font_scale": 0.5,
+  "area_text_scale": 0.65,
+  "ui_fps": 8,
+  "class_cfg": {
+    "Extremo": {
+      "color": [
+        0,
+        255,
+        0
+      ],
+      "m1": true,
+      "m2": false,
+      "thr": 0.06907378335949764,
+      "area_mode_m1": "inherit",
+      "area_mode_m2": "off",
+      "cm2_m1": true,
+      "cm2_m2": false,
+      "thr_inherit": true
+    },
+    "No Plancha": {
+      "color": [
+        0,
+        0,
+        255
+      ],
+      "m1": true,
+      "m2": false,
+      "thr": 0.06907378335949764,
+      "area_mode_m1": "inherit",
+      "area_mode_m2": "off",
+      "cm2_m1": true,
+      "cm2_m2": false,
+      "thr_inherit": true
+    },
+    "Soldadura": {
+      "color": [
+        255,
+        0,
+        0
+      ],
+      "m1": true,
+      "m2": false,
+      "thr": 0.0,
+      "area_mode_m1": "inherit",
+      "area_mode_m2": "off",
+      "cm2_m1": true,
+      "cm2_m2": false,
+      "thr_inherit": false
+    },
+    "Mancha": {
+      "color": [
+        64,
+        0,
+        128
+      ],
+      "m1": false,
+      "m2": true,
+      "thr": 0.27,
+      "cm2_m1": false,
+      "cm2_m2": true,
+      "thr_inherit": false,
+      "area_mode_m1": "off",
+      "area_mode_m2": "inherit"
+    },
+    "Mancha_Agua": {
+      "color": [
+        128,
+        128,
+        64
+      ],
+      "m1": false,
+      "m2": true,
+      "thr": 0.2,
+      "cm2_m1": false,
+      "cm2_m2": true,
+      "thr_inherit": false,
+      "area_mode_m1": "off",
+      "area_mode_m2": "inherit"
+    }
+  },
+  "rtsp_out_enable": true,
+  "rtsp_out_url": "rtsp://0.0.0.0:554/mystream1",
+  "rtsp_out_codec": "Auto (NVENC)",
+  "rtsp_out_transport": "TCP",
+  "snapshot_write_interval_ms": 350,
+  "snapshot_clean_interval_sec": 180.0,
+  "calibration": {
+    "cam_height_cm": 110.0,
+    "visible_len_cm": 105.0,
+    "row_near_px": 320.0,
+    "row_far_px": 980.0,
+    "a4_dist_cm": 50.0,
+    "a4_real_cm": 29.7,
+    "a4_px": 400.0
+  },
+  "presets": {
+    "models": {
+      "Decapado_Superior": {
+        "model_path": "",
+        "model_path2": "",
+        "video_path": ""
+      },
+      "Guida": {
+        "model_path": "",
+        "model_path2": "",
+        "video_path": ""
+      }
+    },
+    "rtsp_in": {
+      "Decapado_Superir": {
+        "host": "0.0.0.0",
+        "port": "554",
+        "user": "admin",
+        "password": "",
+        "path": "",
+        "manual_enabled": false,
+        "manual_url": "rtsp://0.0.0.0:554/cam/realmonitor"
+      },
+      "Guida": {
+        "host": "0.0.0.0",
+        "port": "554",
+        "user": "admin",
+        "password": "",
+        "path": "rtsp://0.0.0.0:554/cam/realmonitor"
+      }
+    },
+    "rtsp_out": {
+      "Decapado_Superior": {
+        "url": "rtsp://0.0.0.0:554/decapado_sup",
+        "codec": "Auto (NVENC)",
+        "transport": "TCP"
+      },
+      "Guida": {
+        "url": "rtsp://0.0.0.0:554/mystream1",
+        "codec": "Auto (NVENC)",
+        "transport": "TCP"
+      }
+    }
+  },
+  "sectorizador": {
+    "borde_superior": "No Plancha",
+    "borde_inferior": "(Ninguno)",
+    "borde_izquierdo": "Extremo",
+    "borde_derecho": "Extremo",
+    "modo": "rejilla",
+    "num_verticales": 5,
+    "num_horizontales": 1,
+    "mostrar": true,
+    "mostrar_etiquetas": true,
+    "mostrar_borde_banda": true,
+    "opacidad_lineas": 1.0,
+    "grosor_lineas": 3,
+    "use_perspective": true,
+    "use_border_masks": true,
+    "modo_delimitacion": "BBox",
+    "estabilidad": "Alta",
+    "comportamiento_fallo": "Congelar",
+    "smooth_alpha": 1.0,
+    "max_corner_jump_px": 25.0,
+    "inset_px": 20,
+    "debug_overlay": false,
+    "curved_edges_enabled": true,
+    "curved_bins_vertical": 15,
+    "curved_bins_horizontal": 15,
+    "curved_percentile_trim": 0.1,
+    "padding_top_px": 230,
+    "padding_bottom_px": 10,
+    "padding_left_px": 0,
+    "padding_right_px": 0,
+    "roi_quant_step_px": 50,
+    "line_quant_step_px": 50,
+    "restricciones_enabled": true,
+    "restricciones_por_clase": {
+      "Extremo": {
+        "modo": "solo_fuera_malla",
+        "sectores": []
+      },
+      "Mancha": {
+        "modo": "solo_malla",
+        "sectores": [
+          0,
+          1,
+          4,
+          3,
+          2
+        ]
+      },
+      "No Plancha": {
+        "modo": "solo_fuera_malla",
+        "sectores": []
+      },
+      "Soldadura": {
+        "modo": "solo_sectores",
+        "sectores": [
+          2
+        ]
+      },
+      "Corte": {
+        "modo": "sin_restriccion",
+        "sectores": []
+      },
+      "NoPlancha": {
+        "modo": "sin_restriccion",
+        "sectores": []
+      },
+      "Mancha_Agua": {
+        "modo": "solo_malla",
+        "sectores": []
+      },
+      "Subdecapado": {
+        "modo": "solo_malla",
+        "sectores": []
+      }
+    }
+  },
+  "fps_update_interval_ms": 200,
+  "sectores": {
+    "excluidos": [
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "ajustes_locales": {},
+    "restricciones_clase": {
+      "Extremo": {
+        "modo": "solo_fuera_malla",
+        "sectores": []
+      },
+      "Mancha": {
+        "modo": "solo_malla",
+        "sectores": [
+          0,
+          1,
+          4,
+          3,
+          2
+        ]
+      },
+      "No Plancha": {
+        "modo": "solo_fuera_malla",
+        "sectores": []
+      },
+      "Soldadura": {
+        "modo": "solo_sectores",
+        "sectores": [
+          2
+        ]
+      },
+      "Corte": {
+        "modo": "sin_restriccion",
+        "sectores": []
+      },
+      "NoPlancha": {
+        "modo": "sin_restriccion",
+        "sectores": []
+      },
+      "Mancha_Agua": {
+        "modo": "solo_malla",
+        "sectores": []
+      },
+      "Subdecapado": {
+        "modo": "solo_malla",
+        "sectores": []
+      }
+    },
+    "sensibilidades": {}
+  },
+  "profiles": {
+    "ultimo_usado": {
+      "name": "Ultimo usado",
+      "models": {
+        "source_mode": "RTSP",
+        "model_path": "",
+        "model_path2": "",
+        "video_path": ""
+      },
+      "rtsp_in": {
+        "host": "0.0.0.0",
+        "port": "554",
+        "user": "admin",
+        "password": "",
+        "path": "",
+        "manual_enabled": false,
+        "manual_url": "rtsp://0.0.0.0:554/cam/realmonitor"
+      },
+      "rtsp_out": {
+        "enable": true,
+        "url": "rtsp://0.0.0.0:554/decapado_sup",
+        "codec": "Auto (NVENC)",
+        "transport": "TCP"
+      },
+      "settings": {
+        "model_path": "",
+        "model_path2": "",
+        "video_path": "",
+        "out_path": "",
+        "save_out": false,
+        "source_mode": "RTSP",
+        "rtsp_user": "admin",
+        "rtsp_password": "",
+        "rtsp_host": "0.0.0.0",
+        "rtsp_port": "554",
+        "rtsp_path": "",
+        "rtsp_manual_enabled": false,
+        "rtsp_manual_url": "rtsp://0.0.0.0:554/cam/realmonitor",
+        "conf": 0.21848557692307694,
+        "iou": 0.1,
+        "show_boxes": false,
+        "show_names": true,
+        "show_masks": true,
+        "area_label_mode": "off",
+        "masks_as_contours": false,
+        "use_retina_masks": true,
+        "highlight_tiny": true,
+        "perf_mode": "Paralelo",
+        "auto_skip": true,
+        "target_fps": 23,
+        "det_stride": 1,
+        "stride2_var": 1,
+        "imgsz1": 720,
+        "imgsz2": 720,
+        "max_det": 35,
+        "topk_draw": 35,
+        "filter_in_model": true,
+        "agnostic_nms": true,
+        "use_half": true,
+        "enable_m1": true,
+        "enable_m2": true,
+        "line_thickness": 6,
+        "font_scale": 1.5,
+        "area_text_scale": 0.5,
+        "ui_fps": 8,
+        "class_cfg": {
+          "Extremo": {
+            "color": [
+              0,
+              255,
+              0
+            ],
+            "m1": true,
+            "m2": false,
+            "thr": 0.44,
+            "area_mode_m1": "inherit",
+            "area_mode_m2": "inherit"
+          },
+          "Mancha": {
+            "color": [
+              40,
+              4,
+              215
+            ],
+            "m1": false,
+            "m2": true,
+            "thr": 0.0,
+            "area_mode_m1": "inherit",
+            "area_mode_m2": "inherit"
+          },
+          "No Plancha": {
+            "color": [
+              0,
+              0,
+              255
+            ],
+            "m1": true,
+            "m2": false,
+            "thr": 0.22,
+            "area_mode_m1": "inherit",
+            "area_mode_m2": "inherit"
+          },
+          "Soldadura": {
+            "color": [
+              255,
+              0,
+              0
+            ],
+            "m1": true,
+            "m2": false,
+            "thr": 0.22,
+            "area_mode_m1": "inherit",
+            "area_mode_m2": "inherit"
+          }
+        },
+        "rtsp_out_enable": true,
+        "rtsp_out_url": "rtsp://0.0.0.0:554/decapado_sup",
+        "rtsp_out_codec": "Auto (NVENC)",
+        "rtsp_out_transport": "TCP",
+        "snapshot_write_interval_ms": 300,
+        "snapshot_clean_interval_sec": 70.0,
+        "calibration": {
+          "cam_height_cm": 110.0,
+          "visible_len_cm": 105.0,
+          "row_near_px": 320.0,
+          "row_far_px": 980.0,
+          "a4_dist_cm": 50.0,
+          "a4_real_cm": 29.7,
+          "a4_px": 400.0
+        },
+        "sectorizador": {
+          "borde_superior": "No Plancha",
+          "borde_inferior": "(Ninguno)",
+          "borde_izquierdo": "Extremo",
+          "borde_derecho": "Extremo",
+          "modo": "rejilla",
+          "num_verticales": 5,
+          "num_horizontales": 2,
+          "mostrar": true,
+          "mostrar_etiquetas": true,
+          "use_perspective": true,
+          "use_border_masks": true,
+          "smooth_alpha": 0.05,
+          "max_corner_jump_px": 25.0,
+          "inset_px": 0,
+          "debug_overlay": true,
+          "curved_edges_enabled": true,
+          "curved_bins_vertical": 15,
+          "curved_bins_horizontal": 15,
+          "curved_percentile_trim": 0.1,
+          "padding_top_px": 35,
+          "padding_bottom_px": 0,
+          "padding_left_px": 0,
+          "padding_right_px": 0,
+          "restricciones_enabled": true,
+          "restricciones_por_clase": {
+            "Extremo": {
+              "modo": "sin_restriccion",
+              "sectores": []
+            },
+            "Mancha": {
+              "modo": "sin_restriccion",
+              "sectores": []
+            },
+            "No Plancha": {
+              "modo": "sin_restriccion",
+              "sectores": []
+            },
+            "Soldadura": {
+              "modo": "sin_restriccion",
+              "sectores": []
+            }
+          }
+        },
+        "fps_update_interval_ms": 200,
+        "sectores": {
+          "excluidos": [
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "ajustes_locales": {}
+        }
+      }
+    },
+    "decapado_superior": {
+      "name": "Decapado_Superior",
+      "models": {
+        "source_mode": "RTSP",
+        "model_path": "",
+        "model_path2": "",
+        "video_path": ""
+      },
+      "rtsp_in": {
+        "host": "0.0.0.0",
+        "port": "554",
+        "user": "admin",
+        "password": "",
+        "path": "",
+        "manual_enabled": false,
+        "manual_url": "rtsp://0.0.0.0:554/cam/realmonitor"
+      },
+      "rtsp_out": {
+        "enable": true,
+        "url": "rtsp://0.0.0.0:554/mystream1",
+        "codec": "Auto (NVENC)",
+        "transport": "TCP"
+      },
+      "settings": {
+        "model_path": "",
+        "model_path2": "",
+        "video_path": "",
+        "out_path": "",
+        "save_out": false,
+        "source_mode": "RTSP",
+        "rtsp_user": "admin",
+        "rtsp_password": "",
+        "rtsp_host": "0.0.0.0",
+        "rtsp_port": "554",
+        "rtsp_path": "",
+        "rtsp_manual_enabled": false,
+        "rtsp_manual_url": "rtsp://0.0.0.0:554/cam/realmonitor",
+        "conf": 0.06907378335949764,
+        "iou": 0.08925869894099848,
+        "show_boxes": false,
+        "show_names": true,
+        "show_masks": true,
+        "area_label_mode": "both",
+        "masks_as_contours": false,
+        "use_retina_masks": true,
+        "highlight_tiny": false,
+        "perf_mode": "Auto",
+        "auto_skip": true,
+        "target_fps": 23,
+        "det_stride": 3,
+        "stride2_var": 1,
+        "imgsz1": 700,
+        "imgsz2": 1280,
+        "max_det": 40,
+        "topk_draw": 40,
+        "filter_in_model": true,
+        "agnostic_nms": true,
+        "use_half": true,
+        "enable_m1": true,
+        "enable_m2": true,
+        "line_thickness": 4,
+        "font_scale": 0.5,
+        "area_text_scale": 0.65,
+        "ui_fps": 8,
+        "class_cfg": {
+          "Extremo": {
+            "color": [
+              0,
+              255,
+              0
+            ],
+            "m1": true,
+            "m2": false,
+            "thr": 0.06907378335949764,
+            "area_mode_m1": "inherit",
+            "area_mode_m2": "off",
+            "cm2_m1": true,
+            "cm2_m2": false,
+            "thr_inherit": true
+          },
+          "No Plancha": {
+            "color": [
+              0,
+              0,
+              255
+            ],
+            "m1": true,
+            "m2": false,
+            "thr": 0.06907378335949764,
+            "area_mode_m1": "inherit",
+            "area_mode_m2": "off",
+            "cm2_m1": true,
+            "cm2_m2": false,
+            "thr_inherit": true
+          },
+          "Soldadura": {
+            "color": [
+              255,
+              0,
+              0
+            ],
+            "m1": true,
+            "m2": false,
+            "thr": 0.0,
+            "area_mode_m1": "inherit",
+            "area_mode_m2": "off",
+            "cm2_m1": true,
+            "cm2_m2": false,
+            "thr_inherit": false
+          },
+          "Mancha": {
+            "color": [
+              64,
+              0,
+              128
+            ],
+            "m1": false,
+            "m2": true,
+            "thr": 0.27,
+            "cm2_m1": false,
+            "cm2_m2": true,
+            "thr_inherit": false,
+            "area_mode_m1": "off",
+            "area_mode_m2": "inherit"
+          },
+          "Mancha_Agua": {
+            "color": [
+              128,
+              128,
+              64
+            ],
+            "m1": false,
+            "m2": true,
+            "thr": 0.2,
+            "cm2_m1": false,
+            "cm2_m2": true,
+            "thr_inherit": false,
+            "area_mode_m1": "off",
+            "area_mode_m2": "inherit"
+          }
+        },
+        "rtsp_out_enable": true,
+        "rtsp_out_url": "rtsp://0.0.0.0:554/mystream1",
+        "rtsp_out_codec": "Auto (NVENC)",
+        "rtsp_out_transport": "TCP",
+        "snapshot_write_interval_ms": 350,
+        "snapshot_clean_interval_sec": 180.0,
+        "calibration": {
+          "cam_height_cm": 110.0,
+          "visible_len_cm": 105.0,
+          "row_near_px": 320.0,
+          "row_far_px": 980.0,
+          "a4_dist_cm": 50.0,
+          "a4_real_cm": 29.7,
+          "a4_px": 400.0
+        },
+        "sectorizador": {
+          "borde_superior": "No Plancha",
+          "borde_inferior": "(Ninguno)",
+          "borde_izquierdo": "Extremo",
+          "borde_derecho": "Extremo",
+          "modo": "rejilla",
+          "num_verticales": 5,
+          "num_horizontales": 1,
+          "mostrar": true,
+          "mostrar_etiquetas": true,
+          "mostrar_borde_banda": true,
+          "opacidad_lineas": 1.0,
+          "grosor_lineas": 3,
+          "use_perspective": true,
+          "use_border_masks": true,
+          "modo_delimitacion": "BBox",
+          "estabilidad": "Alta",
+          "comportamiento_fallo": "Congelar",
+          "smooth_alpha": 1.0,
+          "max_corner_jump_px": 25.0,
+          "inset_px": 20,
+          "debug_overlay": false,
+          "curved_edges_enabled": true,
+          "curved_bins_vertical": 15,
+          "curved_bins_horizontal": 15,
+          "curved_percentile_trim": 0.1,
+          "padding_top_px": 230,
+          "padding_bottom_px": 10,
+          "padding_left_px": 0,
+          "padding_right_px": 0,
+          "roi_quant_step_px": 50,
+          "line_quant_step_px": 50,
+          "restricciones_enabled": true,
+          "restricciones_por_clase": {
+            "Extremo": {
+              "modo": "solo_fuera_malla",
+              "sectores": []
+            },
+            "Mancha": {
+              "modo": "solo_malla",
+              "sectores": [
+                0,
+                1,
+                4,
+                3,
+                2
+              ]
+            },
+            "No Plancha": {
+              "modo": "solo_fuera_malla",
+              "sectores": []
+            },
+            "Soldadura": {
+              "modo": "solo_sectores",
+              "sectores": [
+                2
+              ]
+            },
+            "Corte": {
+              "modo": "sin_restriccion",
+              "sectores": []
+            },
+            "NoPlancha": {
+              "modo": "sin_restriccion",
+              "sectores": []
+            },
+            "Mancha_Agua": {
+              "modo": "solo_malla",
+              "sectores": []
+            },
+            "Subdecapado": {
+              "modo": "solo_malla",
+              "sectores": []
+            }
+          }
+        },
+        "fps_update_interval_ms": 200,
+        "sectores": {
+          "excluidos": [
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "ajustes_locales": {},
+          "restricciones_clase": {
+            "Extremo": {
+              "modo": "solo_fuera_malla",
+              "sectores": []
+            },
+            "Mancha": {
+              "modo": "solo_malla",
+              "sectores": [
+                0,
+                1,
+                4,
+                3,
+                2
+              ]
+            },
+            "No Plancha": {
+              "modo": "solo_fuera_malla",
+              "sectores": []
+            },
+            "Soldadura": {
+              "modo": "solo_sectores",
+              "sectores": [
+                2
+              ]
+            },
+            "Corte": {
+              "modo": "sin_restriccion",
+              "sectores": []
+            },
+            "NoPlancha": {
+              "modo": "sin_restriccion",
+              "sectores": []
+            },
+            "Mancha_Agua": {
+              "modo": "solo_malla",
+              "sectores": []
+            },
+            "Subdecapado": {
+              "modo": "solo_malla",
+              "sectores": []
+            }
+          },
+          "sensibilidades": {}
+        },
+        "dashboard_widgets": [
+          {
+            "widget_id": "widget_1768394740892",
+            "type": "plc_value",
+            "label": "Velocidad_Decapado",
+            "config": {
+              "ip": "0.0.0.0",
+              "rack": 0,
+              "slot": 2,
+              "address": "DB6.DBW0",
+              "data_type": "UINT"
+            },
+            "interval_sec": 1.5
+          },
+          {
+            "widget_id": "widget_1768394929381",
+            "type": "detection_count",
+            "label": "Manchas en Tiempo Real",
+            "config": {
+              "mode": "by_class",
+              "class": "Mancha"
+            },
+            "interval_sec": 1.5
+          },
+          {
+            "widget_id": "widget_1769412835464",
+            "type": "detection_count",
+            "label": "Soldadura",
+            "config": {
+              "mode": "by_class",
+              "class": "Soldadura"
+            },
+            "interval_sec": 1.0
+          }
+        ],
+        "fps_settings": {
+          "interval": 0.5,
+          "low_thresh": 15,
+          "low_color": "#d32f2f",
+          "med_thresh": 24,
+          "med_color": "#f57c00",
+          "high_color": "#388e3c"
+        },
+        "ui_sash_pos": 839,
+        "perf_tracked_class": "",
+        "imgsz": 720,
+        "restricciones_enabled": true,
+        "perf_trace": {
+          "enabled": false
+        },
+        "show_confidence": true
+      }
+    },
+    "guida_superior": {
+      "name": "Guida_Superior",
+      "models": {
+        "source_mode": "RTSP",
+        "model_path": "",
+        "model_path2": "",
+        "video_path": ""
+      },
+      "rtsp_in": {
+        "host": "0.0.0.0",
+        "port": "554",
+        "user": "admin",
+        "password": "",
+        "path": "rtsp://0.0.0.0:554/cam/realmonitor",
+        "manual_enabled": true,
+        "manual_url": "rtsp://0.0.0.0:554/cam/realmonitor"
+      },
+      "rtsp_out": {
+        "enable": true,
+        "url": "rtsp://0.0.0.0:554/mystream1",
+        "codec": "Auto (NVENC)",
+        "transport": "TCP"
+      },
+      "settings": {
+        "conf": 0.21848557692307694,
+        "iou": 0.1,
+        "imgsz": 720,
+        "imgsz2": 720,
+        "perf_mode": "Paralelo",
+        "auto_skip": true,
+        "target_fps": 23,
+        "det_stride": 1,
+        "filter_in_model": true,
+        "use_retina_masks": true,
+        "masks_as_contours": false,
+        "topk_draw": 35,
+        "highlight_tiny": true,
+        "agnostic_nms": true,
+        "use_half": true,
+        "line_thickness": 6,
+        "font_scale": 1.5,
+        "area_text_scale": 0.5,
+        "enable_m1": true,
+        "enable_m2": true,
+        "ui_fps": 8,
+        "area_label_mode": "Sin etiqueta",
+        "snapshot_write_interval_ms": 300,
+        "snapshot_clean_interval_sec": 70.0,
+        "restricciones_enabled": true,
+        "perf_tracked_class": ""
+      }
+    }
+  },
+  "active_profile_id": "decapado_superior",
+  "dashboard_widgets": [
+    {
+      "widget_id": "widget_1768394740892",
+      "type": "plc_value",
+      "label": "Velocidad_Decapado",
+      "config": {
+        "ip": "0.0.0.0",
+        "rack": 0,
+        "slot": 2,
+        "address": "DB6.DBW0",
+        "data_type": "UINT"
+      },
+      "interval_sec": 1.5
+    },
+    {
+      "widget_id": "widget_1768394929381",
+      "type": "detection_count",
+      "label": "Manchas en Tiempo Real",
+      "config": {
+        "mode": "by_class",
+        "class": "Mancha"
+      },
+      "interval_sec": 1.5
+    },
+    {
+      "widget_id": "widget_1769412835464",
+      "type": "detection_count",
+      "label": "Soldadura",
+      "config": {
+        "mode": "by_class",
+        "class": "Soldadura"
+      },
+      "interval_sec": 1.0
+    }
+  ],
+  "fps_settings": {
+    "interval": 0.5,
+    "low_thresh": 15,
+    "low_color": "#d32f2f",
+    "med_thresh": 24,
+    "med_color": "#f57c00",
+    "high_color": "#388e3c"
+  },
+  "ui_sash_pos": 839,
+  "perf_tracked_class": "",
+  "imgsz": 720,
+  "restricciones_enabled": true,
+  "perf_trace": {
+    "enabled": false
+  },
+  "show_confidence": true
+}

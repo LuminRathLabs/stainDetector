@@ -1,0 +1,207 @@
+{
+  "_version": "1.2",
+  "_description": "Textos de ayuda refinados con detalles de comportamiento interno (ventanas de tiempo, stride, etc).",
+  "sendToPLC": {
+    "vision": {
+      "class_condition": "Nombre exacto de la clase a detectar (como se definió en el entrenamiento). Ej: 'Mancha', 'Raya'.",
+      "detection_only": "Modo binario: Se activa si hay presencia de al menos un objeto, sin importar cantidad o tamaño. Ideal para alertas SI/NO.",
+      "min_count": "Umbral inferior de cantidad. Se activa si (nº objetos >= este valor). Ej: 1 para al menos uno.",
+      "max_count": "Umbral superior de cantidad. Se activa si (nº objetos <= este valor). Útil para alertas de 'exceso de defectos'.",
+      "min_area": "Filtro de tamaño: Ignora objetos con área menor a este valor antes de contar.",
+      "max_area": "Filtro de tamaño: Ignora objetos con área mayor a este valor. Útil para descartar falsos positivos enormes o manchas irrelevantes.",
+      "area_unit": "Unidad de los filtros de área: 'px' (píxeles reales de imagen) o 'cm' (centímetros cuadrados, requiere calibración previa).",
+      "min_conf": "Filtro de confianza (0.0 a 1.0). Descarta detecciones con certeza baja. Recomendado: 0.5 - 0.7.",
+      "window_sec": "Ventana de acumulación. IMPORTANTE: El sistema usa dos modos internos: Corto (≤3s) para reacción rápida, o Largo (>3s, fija a 30s) para estabilidad estadística.",
+      "sector": "Filtrado por zona: Número de sector (0, 1, 2...) donde debe estar el objeto para contar. Dejar vacío para 'Toda la imagen'."
+    },
+    "plc": {
+      "preset": "Carga rápida: Selecciona un PLC pre-configurado de la lista 'Presets PLC' para no escribir IPs manualmente.",
+      "manual_toggle": "Modo experto: Permite escribir direcciones de memoria 'crudas' fuera de los estándares predefinidos.",
+      "ip_optional": "Sobreescribir IP: Úsalo solo si este PLC específico tiene una IP distinta a la del preset seleccionado.",
+      "connection_params": "Ajuste fino de hardware: Rack y Slot de la CPU Siemens. (Por defecto Rack 0, Slot 1/2).",
+      "byte_bit_value": "Dirección exacta del bit: Byte (ej: 100) y Bit (0-7). El sistema leerá si es 1 (True) o 0 (False).",
+      "label_optional": "Alias: Nombre legible para los logs (ej: 'Sensor_Puerta'). Facilita el diagnóstico.",
+      "read_mode": "Interpretación: 'Bit' para señales digitales (On/Off), 'Numérico' para leer valores de contadores o sensores analógicos.",
+      "numeric_address": "Dirección Siemens absoluta (ej: 'MW10', 'DB5.DBW4', 'DB1.DBD10').",
+      "numeric_type": "Tipo de dato PLC: Debe coincidir con el autómata (Int, DInt, Real, Word) para decodificar bytes correctamente.",
+      "numeric_operator": "Comparador lógico: Define cuándo se cumple la condición (ej: Valor leído > 50)."
+    },
+    "rule_editor": {
+      "target_rule": "Regla Origen: Selecciona qué otra regla estamos vigilando. Esta 'Regla sobre Regla' permite lógicas complejas.",
+      "min_firings": "Persistencia mínima: La regla origen debe haberse activado X veces en la ventana de tiempo para disparar esta alerta.",
+      "max_firings": "Límite de ocurrencias: Si la regla origen se activa más de X veces, se ignora.",
+      "window_sec": "Ventana de observación (segundos): Tiempo 'hacia atrás' donde contamos cuántas veces ocurrió la regla origen.",
+      "debounce_ms": "Estabilización: La condición debe mantenerse VERDADERA continuamente durante este tiempo (ms) antes de disparar. Filtra parpadeos.",
+      "cooldown_sec": "Tiempo muerto: Tras dispararse, esta regla se 'apaga' durante X segundos. Evita spammear alertas consecutivas.",
+      "label": "Nombre corto para identificar este bloque de condición en la interfaz principal."
+    },
+    "rule_info": {
+      "name": "Identificador único. Será visible en la lista de alarmas y logs. Usa nombres claros (ej: 'Mancha_Grave_Sector1').",
+      "enabled": "Estado: ON/OFF. Desactívalo para mantenimiento sin borrar la configuración.",
+      "priority": "Orden de evaluación (0-99). Mayor número = Se evalúa antes. Importante si usas acciones de 'Bloquear otras reglas'.",
+      "description": "Campo libre para notas del operador (causa, procedimiento, etc)."
+    },
+    "actions": {
+      "mute_triggers": "Inhibición: Selecciona qué OTRAS reglas deben ignorarse si esta se activa (prioridad/exclusión mutua).",
+      "mute_duration": "Duración de inhibición: Cuántos segundos permanecerán silenciadas las otras reglas.",
+      "extra_actions": "Efectos secundarios: Enviar señal a PLC, Guardar foto, Mostrar mensaje en pantalla..."
+    },
+    "conditions": {
+      "root_operator": "Operador lógico global: 'AND' (Todas deben cumplirse) / 'OR' (Basta una).",
+      "negated": "Invertir lógica: Si se marca, la regla se dispara cuando las condiciones NO se cumplen."
+    },
+    "profiles": {
+      "active": "Perfil Maestro: Cambia toda la configuración (modelos, tolerancias, reglas) al instante. Útil para cambios de producto."
+    },
+    "rules": {
+      "search": "Filtro rápido: Escribe para encontrar reglas por nombre, etiqueta o tipo.",
+      "filter": "Filtro de vista: Muestra solo reglas habilitadas, deshabilitadas o rotas."
+    },
+    "plc_presets": {
+      "name": "Nombre amigable (ej: 'Linea_1').",
+      "description": "Detalles extra (opcional).",
+      "ip": "Dirección IPv4 del autómata.",
+      "rack_slot": "Dir. Física Siemens (Rack, Slot).",
+      "area": "Área de memoria por defecto (DB, M, Q, I) para no elegirla siempre.",
+      "db_number": "Número de DB por defecto (si aplica).",
+      "default_byte_bit": "Dirección de inicio rápida para nuevas acciones."
+    },
+    "plc_target": {
+      "byte": "Byte destino.",
+      "bit": "Bit destino (0-7).",
+      "value": "Valor a escribir: 1 (Set) o 0 (Reset)."
+    },
+    "action_editor": {
+      "kind": "Acción: Mensaje (OSD), Snapshot (Disco), PLC (Señal), Bloquear (Lógica).",
+      "message_text": "Texto a mostrar al operario en el video en vivo.",
+      "message_color": "Color de fondo del aviso (Hex).",
+      "message_duration": "Tiempo que el mensaje se queda en pantalla (ms).",
+      "message_opacity": "Transparencia del aviso.",
+      "snapshot_label": "Sufijo para el nombre del archivo JPG/JSON.",
+      "snapshot_annotate": "Quemado: Si activo, la imagen guardada tendrá las cajas pintadas. Si no, imagen limpia.",
+      "block_triggers": "IDs de reglas a silenciar.",
+      "block_duration": "Duración del bloqueo (seg).",
+      "manual_level": "Forzar nivel de degradación en lógica interna (uso avanzado).",
+      "plc_preset": "Autómata destino.",
+      "plc_tag": "Nombre de la señal para logs.",
+      "plc_targets": "Mapas de memoria a escribir.",
+      "plc_advanced": "Editar params de conexión manuales.",
+      "plc_ip": "IP destino.",
+      "plc_rack": "Rack.",
+      "plc_slot": "Slot.",
+      "plc_area": "Area (DB/M...).",
+      "plc_db": "Num DB."
+    },
+    "snapshot": {
+      "label": "Etiqueta archivo.",
+      "annotate": "Con overlays.",
+      "enabled": "Activar generación de fotos.",
+      "require_trigger": "Solo si hay disparo real. Ahorra disco.",
+      "cooldown": "Espera mínima (s) entre fotos."
+    }
+  },
+  "detect_manchas": {
+    "sensitivity": {
+      "conf": "Certeza mínima global (0.00-1.00). Todo lo que tenga menos confianza que esto se descarta absolutamente.",
+      "iou": "Intersección sobre Unión (0.0-1.0). Controla qué tanto deben solaparse dos cajas para fusionarse en una sola. Alto = menos fusión."
+    },
+    "profiles": {
+      "active": "Selección de receta de producción (Perfil)."
+    },
+    "models": {
+      "preset": "Combinación guardada de modelos M1+M2.",
+      "model1_path": "Archivo del Modelo 1 (Principal). Usualmente detector general.",
+      "model2_path": "Archivo del Modelo 2 (Secundario/Refinador).",
+      "enable_m1": "Motor M1: ON/OFF. Apagar si no se necesita para ahorrar VRAM.",
+      "enable_m2": "Motor M2: ON/OFF. Generalmente usado para clasificar recortes del M1."
+    },
+    "source": {
+      "mode": "Entrada de video: RTSP (Cámara IP) o Archivo (Video local/bucle).",
+      "video_path": "Ruta del archivo de video para pruebas."
+    },
+    "rtsp_in": {
+      "host": "IP de la cámara.",
+      "port": "Puerto RTSP (554).",
+      "user": "Usuario cámara.",
+      "password": "Password cámara.",
+      "path": "Sufijo URL Stream (ej: /h264).",
+      "preset": "Cámaras guardadas."
+    },
+    "rtsp_out": {
+      "enable": "Servidor de Streaming: Habilita ver esta pantalla remotamente vía RTSP.",
+      "url": "Dirección para conectarse a este stream (VLC, OBS).",
+      "codec": "Encoder: 'Auto' intenta NVENC (GPU), 'libx264' usa CPU (más compatible pero lento).",
+      "transport": "Protocolo: TCP (Fiable), UDP (Rápido).",
+      "preset": "Configs de salida."
+    },
+    "visualization": {
+      "show_boxes": "Mostrar rectángulos de detección.",
+      "show_names": "Mostrar etiquetas de clase.",
+      "show_confidence": "Mostrar % de certeza.",
+      "show_masks": "Rellenar área detectada (segmentación).",
+      "masks_contours": "Solo bordes de la máscara (menos intrusivo).",
+      "retina_masks": "Máscaras HD: Usar resolución completa. Mejora precisión visual pero reduce FPS.",
+      "highlight_tiny": "Indicadores grandes para objetos minúsculos.",
+      "area_label": "Mostrar tamaño medido (valor numérico)."
+    },
+    "settings": {
+      "advanced": {
+        "snapshot_write_interval": "Ciclo de escritura (ms): Frecuencia con la que se vuelcan datos al disco. Subir valor si hay lag de disco.",
+        "snapshot_purge_interval": "Auto-limpieza (s): Tiempo de vida de los datos en RAM antes de borrarse.",
+        "heartbeat_sent": "Latido Detector -> GUI (Debug timestamp).",
+        "heartbeat_received": "Latido GUI -> Detector (Debug timestamp)."
+      },
+      "performance": {
+        "mode": "Estrategia: 'Auto' (Recomendado), 'Secuencial' (FIFO estricto), 'Paralelo' (Máx throughput, posible latencia variable).",
+        "auto_skip_frames": "Anti-Lag: Si el procesamiento es lento, salta frames de video para mantener la imagen 'al día'.",
+        "target_fps": "FPS meta para el algoritmo de auto-skip.",
+        "filter_inference": "Optimización: Filtra clases dentro del modelo. Acelera ligeramente si el modelo tiene muchas clases y solo usas pocas.",
+        "agnostic_nms": "NMS Agmóstico: Si dos objetos de DISTINTA clase se solapan, borra el de menos confianza. (OFF: permite solapamiento de clases distintas).",
+        "half_precision": "FP16 (Half): Usa matemática de 16 bits. Acelera x2 en GPU NVIDIA modernos (Tensor Cores). Requiere soporte hardware.",
+        "enable_m1": "Switch Maestro M1.",
+        "enable_m2": "Switch Maestro M2.",
+        "stride_global": "Salto de escaneo (px). Valor bajo (8-16) detecta objetos pequeños pero es lento. Valor alto (32-64) es muy rápido pero pierde detalles finos.",
+        "stride_m2": "Salto de escaneo para M2.",
+        "imgsz_m1": "Resolución interna de inferencia (px). Debe ser múltiplo de 32. Lo ideal es igualar el tamaño de entrenamiento (ej: 640).",
+        "imgsz_m2": "Resolución interna M2.",
+        "max_det": "Tope de detecciones por frame. Limita la salida del modelo para proteger la memoria.",
+        "topk_draw": "Visualización: Solo dibuja las N mejores detecciones (más confianza) para no saturar la pantalla.",
+        "chart": "Monitor de recursos en tiempo real.",
+        "perftrace_enabled": "Modo Debug: Genera logs masivos de tiempos de ejecución (JSON Trace). NO usar en producción (llena disco).",
+        "perftrace_path": "Archivo log activo."
+      },
+      "appearance": {
+        "line_thickness": "Grosor visual (px).",
+        "font_scale": "Escala fuente.",
+        "area_scale": "Escala fuente área."
+      },
+      "sectors": {
+        "show_sectorization": "Grid: Dibuja las líneas de división de sectores.",
+        "show_labels": "Muestra el ID del sector (0, 1, 2...).",
+        "show_band_border": "Dibuja los límites detectados del material.",
+        "line_opacity": "Transparencia de líneas guía.",
+        "line_width": "Grosor de líneas guía.",
+        "border_top": "Clase M1 usada como ancla para el borde Superior.",
+        "border_bottom": "Clase M1 usada como ancla Inferior.",
+        "border_left": "Clase M1 Izquierda.",
+        "border_right": "Clase M1 Derecha.",
+        "grid_mode": "Geometría: 'Malla' (Matriz fija), 'Perspectiva' (Se adapta a la forma del material).",
+        "grid_verticals": "Columnas de la cuadrícula.",
+        "grid_horizontals": "Filas de la cuadrícula.",
+        "perspective": "Corrección trapezoidal automática (sigue los bordes).",
+        "presets_select": "Configuraciones de sectores.",
+        "advanced": {
+          "stability": "Amortiguación (px): Cuánto debe moverse el borde real para actualizar la malla. Evita 'tembleque' de la imagen.",
+          "fail_mode": "Fallo de anclaje: Qué hacer si no se detectan bordes ('Last Known' mantiene posición anterior).",
+          "margin": "Margen de seguridad (px): Reduce virtualmente el área de detección ignorando los bordes extremos del material.",
+          "alpha": "Filtro temporal (0-1): 0.1 reacción lenta/suave, 0.9 reacción instantánea/nerviosa.",
+          "curved_edges": "Grid Flexible: Permite que las líneas de división se curven siguiendo deformaciones del material.",
+          "curve_bins": "Resolución de la curva (puntos de control).",
+          "padding": "Ajuste fino del ROI.",
+          "quant_step": "Ajuste de coordenadas (px).",
+          "debug_overlay": "Datos técnicos sobre la imagen."
+        }
+      }
+    }
+  }
+}

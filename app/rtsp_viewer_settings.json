@@ -1,0 +1,9 @@
+{
+  "presets": [
+    {
+      "name": "Detector",
+      "url": "rtsp://10.176.3.49:554/decapado_sup"
+    }
+  ],
+  "last_url": "rtsp://10.176.3.49:554/decapado_sup"
+}
